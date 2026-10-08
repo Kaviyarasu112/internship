@@ -1,0 +1,534 @@
+css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f8ff,
+            #eef1ff
+        );
+
+    color: #1e1e2f;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.pricing-section {
+    width: 100%;
+
+    padding: 70px 20px 90px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+.small-title {
+    color: #6c5ce7;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.heading h1 {
+    font-size: 44px;
+
+    margin: 12px 0;
+
+    font-weight: 800;
+}
+
+
+.heading p {
+    color: #777;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BILLING TOGGLE
+========================= */
+
+.billing-toggle {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 40px 0 55px;
+
+    font-weight: 600;
+}
+
+
+.billing-toggle span {
+    color: #888;
+
+    transition: 0.3s;
+}
+
+
+.billing-toggle span.active {
+    color: #222;
+}
+
+
+.save {
+    background: #e4f8ed;
+
+    color: #1c9b58 !important;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* Toggle */
+
+.switch {
+    position: relative;
+
+    width: 55px;
+
+    height: 30px;
+}
+
+
+.switch input {
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+
+    cursor: pointer;
+
+    inset: 0;
+
+    background: #ccc;
+
+    border-radius: 30px;
+
+    transition: 0.4s;
+}
+
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+
+    height: 22px;
+
+    left: 4px;
+
+    top: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.4s;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+input:checked + .slider {
+    background: #6c5ce7;
+}
+
+
+input:checked + .slider::before {
+    transform: translateX(25px);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.pricing-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+.pricing-card {
+    position: relative;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px 30px;
+
+    border: 1px solid #e5e5ef;
+
+    box-shadow:
+        0 10px 30px
+        rgba(40, 40, 80, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border 0.35s ease;
+
+    overflow: hidden;
+}
+
+
+/* Hover Effect */
+
+.pricing-card:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 25px 50px
+        rgba(50, 50, 100, 0.15);
+
+    border-color: #b9b2ff;
+}
+
+
+/* Popular Card */
+
+.popular-card {
+    border: 2px solid #6c5ce7;
+
+    transform: translateY(-10px);
+}
+
+
+.popular-card:hover {
+    transform: translateY(-20px);
+}
+
+
+/* =========================
+   RIBBON
+========================= */
+
+.ribbon {
+    position: absolute;
+
+    top: 20px;
+
+    right: -40px;
+
+    width: 150px;
+
+    text-align: center;
+
+    padding: 8px;
+
+    background: #6c5ce7;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transform: rotate(45deg);
+}
+
+
+.ribbon.best {
+    background: #ff8c42;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content h2 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+
+.description {
+    color: #777;
+
+    min-height: 48px;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price {
+    display: flex;
+
+    align-items: baseline;
+
+    margin-top: 25px;
+
+    margin-bottom: 5px;
+}
+
+
+.currency {
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+.amount {
+    font-size: 48px;
+
+    font-weight: 800;
+
+    margin-left: 3px;
+
+    transition:
+        opacity 0.2s,
+        transform 0.2s;
+}
+
+
+.period {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-left: 5px;
+}
+
+
+.billing-note {
+    color: #999;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.plan-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    border: 2px solid #6c5ce7;
+
+    background: white;
+
+    color: #6c5ce7;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s,
+        color 0.3s,
+        transform 0.3s;
+}
+
+
+.plan-button:hover {
+    background: #6c5ce7;
+
+    color: white;
+
+    transform: scale(1.03);
+}
+
+
+.plan-button.primary {
+    background: #6c5ce7;
+
+    color: white;
+}
+
+
+.plan-button.primary:hover {
+    background: #5848c7;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.card-content h3 {
+    font-size: 14px;
+
+    margin-top: 30px;
+
+    margin-bottom: 15px;
+}
+
+
+.features {
+    list-style: none;
+}
+
+
+.features li {
+    padding: 10px 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .pricing-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 750px;
+    }
+
+    .popular-card {
+        transform: translateY(0);
+    }
+
+    .popular-card:hover {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .pricing-section {
+        padding: 50px 15px;
+    }
+
+
+    .heading h1 {
+        font-size: 32px;
+    }
+
+
+    .heading p {
+        font-size: 15px;
+    }
+
+
+    .billing-toggle {
+        flex-wrap: wrap;
+
+        margin-bottom: 40px;
+    }
+
+
+    .pricing-container {
+        grid-template-columns: 1fr;
+
+        max-width: 420px;
+    }
+
+
+    .pricing-card {
+        padding: 35px 25px;
+    }
+
+
+    .popular-card {
+        transform: none;
+    }
+
+
+    .popular-card:hover {
+        transform: translateY(-10px);
+    }
+
+
+    .amount {
+        font-size: 42px;
+    }
+
+}
